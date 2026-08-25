@@ -1,74 +1,161 @@
-# Secrets & Tests
+# ──────────────────────────────────────────────────────────────────────────────
+# 4NDR0666OS ABSOLUTE CONTAINMENT MANIFEST [v2.0]
+# Combined: Local Ops + Tradecraft + escalation + VS/MSVC + Multi-Log
+# ──────────────────────────────────────────────────────────────────────────────
+
+# == 1. SECRETS, IDENTITY & CREDENTIALS ==
 secrets.json
 *.env
-0-tests/*
+*.env.*
+.env
+.env.local
+*.local
+*.pem
+*.key
+.ssh/
+.secret/
+auth_tokens.json
+*.jks
+project.p2p
 
-## Editor and Shell
-.p10k.zsh
-.zcompdump
-.bash_history
-.zsh_history
-.vscode/
-.idea/
-*.swp
-*.swo
-*.bak
-*.swo
-*.swn  
-*.~?
-*~
+# == 2. OFFENSIVE TRADECRAFT & RESEARCH ==
+compare         
+0-tests/*        
+recon_results/  
+threat_reports/
+payload_stubs/  
+scans/         
+targets.txt    
+payloads/generated_*
+.gemini/       
+GEMINI.md
+.ai_checkpoints/
+.prompt_history/
+matrix_cache.json
+finalize_temp/
+.burp/          
+.ZAP/           
+*.session
+*.lock
+*lock
+# EXCEPTION: Preserve deterministic builds across ecosystems
+!package-lock.json
+!yarn.lock
+!pnpm-lock.yaml
+!bun.lockb
+!Cargo.lock
+!poetry.lock
+!Gemfile.lock
+!composer.lock
 
-## Logs and Runtime 
-*.log
-*.log.*
-*.pid
-*.db
-
-## Python
+# == 3. RUNTIME & LANGUAGES ==
+## Python / Mypy
 __pycache__/
 *.py[cod]
-*.egg-info
-.pytest_cache/
-*.pyc
 *.pyo
-build/
-dist/
-out/
+*.pyc
+*$py.class
+.Python
+.pytest_cache/
+.mypy_cache/
+.codex-venv/
+.hypothesis/
+*.egg-info/
+*.egg
 
-## Node
+## Node / JS / Web
 node_modules/
+jspm_packages/
+.npm/
+.yarn/cache/
 npm-debug.log*
 yarn-debug.log*
-.yarn/cache/
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+.next/
+.svelte-kit/
+dist/
+dist-ssr/
+tsconfig.tsbuildinfo
+.eslintcache
 
-## C/C++/Rust/Go
-target/           
-*.dll
-bin/             
+## C / C++ / Rust / Go / MSVC
+target/
+/target
+bin/
+.bin/
+out/
+build/
 *.o
 *.ko
 *.a
 *.so
+*.dll
 *.exe
+*.lib
+*.obj
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
 
 ## Vendor
 vendor/
 
-## Operating‑system Noise 
+# == 4. INFRASTRUCTURE & VIRTUALIZATION ==
+.terraform/
+*.tfstate*
+.pulumi/
+.docker/
+docker-compose.override.yml
+*.dockerlog
+
+# == 5. MOBILE RESEARCH ==
+.gradle/
+Captures/
+*.apk
+*.dex
+*.ipa
+
+# == 6. EDITOR, SHELL & OS NOISE ==
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.project
+.settings/
+.p10k.zsh
+.zcompdump
+.bash_history
+.zsh_history
+.history/
+.nvm/
+*history*
 .thumbnails/
 $RECYCLE.BIN/
 desktop.ini
-*history*
 Thumbs.db
-.ssh/
 .DS_Store
-*.cache*
+
+# == 7. LOGS, BACKUPS & TEMPORARY ==
+logs/
+*.log
+*.log.*
+*.pid
+*.db
+*.bak
+*.swp
+*.swo
+*.swn
+*.sw?
+*.~?
+*~
 *tmp*
 *.tmp*
-*.pyc
+*.cache*
 *.part
 
-## Archives
+# == 8. ARCHIVES & RECON MEDIA ==
 *.zip
 *.tar
 *.tar.*
@@ -76,11 +163,9 @@ Thumbs.db
 *.gz
 *.bz2
 *.xz
-
-## Large Media
-*.webm     
 *.iso
 *.img
+*.webm
 *.mp4
 *.mkv
 *.mp3
@@ -89,3 +174,5 @@ Thumbs.db
 *.3gp
 *.flv
 *.webp
+*.deb
+*.rpm
